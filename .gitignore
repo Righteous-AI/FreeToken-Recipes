@@ -1,0 +1,21 @@
+# Logs
+*.log
+logs/
+
+# Python / envs
+.venv/
+__pycache__/
+*.pyc
+.env
+.env.*
+
+# Data and model weights
+data/
+*.bin
+*.gguf
+*.safetensors
+
+# OS / editors
+.DS_Store
+.idea/
+.vscode/
