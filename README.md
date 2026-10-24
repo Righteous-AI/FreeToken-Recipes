@@ -166,6 +166,23 @@ curl -s http://127.0.0.1:8000/v1/chat/completions \
 
 ---
 
+## Strata vs FreeToken head-to-head (2026-10-24)
+
+Same 5090, same client and prompts, median of 3 measured runs, `max_tokens` 512. FreeToken here is a later 200k-context unit (`moe.nvfp4=b12x`, disk PLE), not one of the six cases above. Full write-up, launch commands, raw rows and harness: [`strata-vs-freetoken/`](strata-vs-freetoken/).
+
+| Prompt tokens | Strata decode tok/s | FreeToken decode tok/s | Strata TTFT s | FreeToken TTFT s |
+| ---: | ---: | ---: | ---: | ---: |
+| 2100 | 176.8 | 52.9 | 1.288 | 1.350 |
+| 32820 | 163.1 | 53.8 | 4.614 | 5.532 |
+| 131124 | 159.7 | 52.8 | 17.642 | 18.596 |
+| 187912 | 157.8 | 55.0 | 25.776 | 27.220 |
+
+Strata ran with speculative decoding (`--spec 4`); the FreeToken unit did not. The weights are different packs.
+
+![Decode tok/s vs prompt length](strata-vs-freetoken/decode-vs-prompt.png)
+
+---
+
 ## How to reproduce the benches
 
 One-shot wrapper for both tools: [`scripts/run_bench.sh`](scripts/run_bench.sh).
@@ -216,6 +233,7 @@ services/                    # recommended units (+ optional power-cap sample)
 scripts/run_bench.sh         # reproduce the suite
 images/                      # charts
 case1/ … case6/              # llama-benchy + aiperf raw console output, JSON summaries, server logs
+strata-vs-freetoken/          # 2026-10-24 Strata vs FreeToken head-to-head (write-up, CSVs, harness, chart)
 ```
 
 ---

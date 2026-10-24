@@ -1,0 +1,35 @@
+model=Qwen3.8-Flash-Next-NVFP4-ftw-b12x engine=freetoken
+gpu_apps=680862, /opt/freetoken/.venvs/ftok/bin/python
+start freetoken size=2048 warmup run=0
+done freetoken size=2048 warmup run=0 ttft=1.3661 prefill=1537.2060 decode=53.5279 prompt=2100 cached= err=
+start freetoken size=2048 measured run=1
+done freetoken size=2048 measured run=1 ttft=1.3505 prefill=1555.0278 decode=52.9227 prompt=2100 cached= err=
+start freetoken size=2048 measured run=2
+done freetoken size=2048 measured run=2 ttft=1.3498 prefill=1555.8334 decode=52.9079 prompt=2100 cached= err=
+start freetoken size=2048 measured run=3
+done freetoken size=2048 measured run=3 ttft=1.3494 prefill=1556.2662 decode=53.3847 prompt=2100 cached= err=
+start freetoken size=32768 warmup run=0
+done freetoken size=32768 warmup run=0 ttft=8.2734 prefill=3966.9207 decode=52.9248 prompt=32820 cached= err=
+start freetoken size=32768 measured run=1
+done freetoken size=32768 measured run=1 ttft=5.5339 prefill=5930.6862 decode=54.3504 prompt=32820 cached= err=
+start freetoken size=32768 measured run=2
+done freetoken size=32768 measured run=2 ttft=5.5316 prefill=5933.1605 decode=53.8443 prompt=32820 cached= err=
+start freetoken size=32768 measured run=3
+done freetoken size=32768 measured run=3 ttft=5.5244 prefill=5940.8828 decode=52.9014 prompt=32820 cached= err=
+start freetoken size=131072 warmup run=0
+done freetoken size=131072 warmup run=0 ttft=18.6019 prefill=7048.9632 decode=52.4088 prompt=131124 cached= err=
+start freetoken size=131072 measured run=1
+done freetoken size=131072 measured run=1 ttft=18.5955 prefill=7051.3950 decode=51.8687 prompt=131124 cached= err=
+start freetoken size=131072 measured run=2
+done freetoken size=131072 measured run=2 ttft=18.6116 prefill=7045.2830 decode=53.4146 prompt=131124 cached= err=
+start freetoken size=131072 measured run=3
+done freetoken size=131072 measured run=3 ttft=18.5945 prefill=7051.7601 decode=52.7686 prompt=131124 cached= err=
+start freetoken size=187860 warmup run=0
+done freetoken size=187860 warmup run=0 ttft=27.2119 prefill=6905.5177 decode=56.0977 prompt=187912 cached= err=
+start freetoken size=187860 measured run=1
+done freetoken size=187860 measured run=1 ttft=27.1856 prefill=6912.1849 decode=55.0156 prompt=187912 cached= err=
+start freetoken size=187860 measured run=2
+done freetoken size=187860 measured run=2 ttft=27.2199 prefill=6903.4861 decode=56.6324 prompt=187912 cached= err=
+start freetoken size=187860 measured run=3
+done freetoken size=187860 measured run=3 ttft=27.2244 prefill=6902.3326 decode=54.9542 prompt=187912 cached= err=
+HARNESS_DONE
